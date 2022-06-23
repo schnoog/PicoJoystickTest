@@ -50,7 +50,7 @@ void mcp_setup(){
     io23017 = ioFrom23017(0x20, ACTIVE_LOW_OPEN, attachedInterruptPin);
     serdebugF("Starting example");
     switches.init(io23017, SWITCHES_NO_POLLING, true);
-    for (int i = sizeof(manResetPins) - 1 ; i < (sizeof(buttonPins)/4); i++) {
+    for (int i = sizeof(manResetPins)/4 - 1 ; i < (sizeof(buttonPins)/4); i++) {
         Btn = buttonPins[i];
         switches.addSwitch(Btn, onKeyPressed, 20);
         switches.onRelease(Btn, onKeyReleased);

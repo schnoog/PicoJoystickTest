@@ -9,6 +9,7 @@
 #include <TaskManagerIO.h>
 #include <IoAbstractionWire.h>
 
+#include <PicoGamepad.h>
 
 //where the final states will be saves
 int buttonState[16]  = {0, 0, 0, 0 , 0 , 0 , 0 , 0, 0 , 0, 0, 0, 0, 0, 0, 0};
@@ -25,6 +26,9 @@ int an0 = 0;
 #include <myjoy_ads.h>
 //ini mcp
 #include <myjoy_mcp.h>
+//ini gamepad
+//#include <myjoy_gamepad.h>
+
 //ini debug output
 #include <myjoy_out.h>
 
@@ -44,4 +48,5 @@ void loop(void)
 {
       taskManager.runLoop();
       SerialOut();
+      GamepadOut();
 }
