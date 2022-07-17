@@ -43,9 +43,10 @@ void onEncoderChange(int encoderValue) {
 
 void setup(void)
 {
-    Wire.begin();
+    //Wire.begin();
     Serial.begin(9600);
-    io23017 = ioFrom23017(0x20, ACTIVE_LOW_OPEN, attachedInterruptPin);
+    uint8_t MyAdd = 0x20;
+    io23017 = ioFrom23017(MyAdd, ACTIVE_LOW_OPEN, attachedInterruptPin);
 
     serdebugF("Starting example");
     //switches.init(io23017,SWITCHES_POLL_EVERYTHING,true);

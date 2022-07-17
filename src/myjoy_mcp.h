@@ -47,7 +47,7 @@ void onEncoderChange(int encoderValue) {
 
 void mcp_setup(){
     int Btn;
-    io23017 = ioFrom23017(0x20, ACTIVE_LOW_OPEN, attachedInterruptPin);
+    io23017 = ioFrom23017(0x20, ACTIVE_LOW_OPEN, InterPin6);
     serdebugF("Starting example");
     switches.init(io23017, SWITCHES_NO_POLLING, true);
     for (int i = sizeof(manResetPins)/4 - 1 ; i < (sizeof(buttonPins)/4); i++) {
